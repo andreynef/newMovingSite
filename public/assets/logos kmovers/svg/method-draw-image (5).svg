@@ -1,0 +1,13 @@
+<svg width="480" height="480" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="null" transform="matrix(1,0,0,0.7182803153991699,0,36.46949354559183) " xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="100" id="svg_2" y="223.45313" x="108.10825" stroke-opacity="null" stroke-width="0" fill="#78b53b">K</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="40" id="svg_3" y="197.45313" x="170.5" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">onstant</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_4" y="218.45313" x="169.5" stroke-opacity="null" stroke-width="0" stroke="null" fill="#000000">-movers-</text>
+ </g>
+</svg>

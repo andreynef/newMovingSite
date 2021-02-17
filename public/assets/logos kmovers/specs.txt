@@ -1,0 +1,11 @@
+Engine	3.7L V-6 270 HP 250.0 ft.lbs. @ 4,000 rpm 
+Fuel Tank	25.0 gal.
+
+Maximum Cargo Volume	404.3 cu.ft.
+
+Exterior Length	237.6 "
+Exterior Width	81.3 "
+Exterior Height	110.1 "
+
+
+Payload	3,720 lbs.
