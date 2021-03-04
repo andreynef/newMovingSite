@@ -37,27 +37,29 @@ const useStyles = makeStyles(theme => ({
     width: '45%',
     // padding:'40px',
     [theme.breakpoints.down('sm')]: {
-      width: '100%',
+      width: '70%',
     },
   },
   pic: {
     borderRadius: '50%',
-    // width:'50%',
+    width:'100%',
   },
 }))
 
 export default function GoodWords(props) {
   const classes = useStyles();
   const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.down('md'));//вызываем библиотеку для адаптива
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));//вызываем библиотеку для адаптива
+  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));//вызываем библиотеку для адаптива
 
 
   return (
     <Grid container direction={matchesSM?'column':null} className={classes.mainContainer} justify={'center'}>
-      <Grid item container className={classes.centralContainer} justify={"space-between"}>
+      <Grid item container className={classes.centralContainer} justify={matchesSM?"center":"space-between"}>
         <Grid item container className={classes.textContainer} >
           <Typography variant={'h3'} style={{marginBottom: '4%', color: 'black'}}>
-            Move With <span style={{color: '#4f87dc', fontStyle: 'italic'}}>the Best</span> Moving Company
+            Move With <span style={{color: '#F16FA6', fontStyle: 'italic'}}>the Best</span> Moving Company
           </Typography>
           <Typography variant={'body1'} style={{marginTop: '10px', marginBottom: '2%'}}>
             Our Moving Company has been a highly successful local moving business for over 10 years. And all because we just set a goal:
@@ -75,14 +77,14 @@ export default function GoodWords(props) {
             Our Moving Company has been a highly successful local moving business for over 10 years. And all because we just set a goal:
           </Typography>
         </Grid>
-        <Grid item className={classes.imgContainer}>
+        <Grid item container className={classes.imgContainer}>
           {/*<ProgressiveImage*/}
           {/*  src={"/assets/bl2.webp"}*/}
           {/*  placeholder={"/assets/bl2.webp"}*/}
           {/*>*/}
           {/*  {src => <img src={src} className={classes.pic} alt={'ava img'} />}*/}
           {/*</ProgressiveImage>*/}
-          <img src={"/assets/bl2.webp"} alt={'pic'} style={{width: '100%'}}/>
+            <img src={"/assets/best2.jpg"} alt={'pic'} className={classes.pic}/>
         </Grid>
       </Grid>
     </Grid>

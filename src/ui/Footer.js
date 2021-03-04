@@ -165,11 +165,11 @@ export default function Footer(props) {
         </Grid>
         <Grid item>
           <Typography variant={'body1'} align={'center'} style={{fontSize: '1rem'}}>
-            <a href={'tel: +14154497888'} style={{textDecoration: 'none'}}>(888)259-0707</a>
+            <a href={'tel: +14154497888'} style={{textDecoration: 'none', color: "#F16FA6"}}>(888)259-0707</a>
           </Typography>
           <Typography variant={'body1'} align={'center'} style={{fontSize: '1rem'}}>
             <a href={'mailto: adhdmovers@gmail.com'}
-               style={{textDecoration: 'none'}}> email@gmail.com</a>
+               style={{textDecoration: 'none', color: "#F16FA6"}}> email@gmail.com</a>
           </Typography>
           <Typography style={{fontSize: matchesXS?'0.7rem':'0.8rem'}}>
             All in moving sistems . LLC

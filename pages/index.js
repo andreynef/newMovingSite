@@ -37,11 +37,12 @@ export default function Index(props) {
       {/*--------GoodWords Block--------*/}
       <GoodWords/>
       {/*--------Get free estimate Block--------*/}
-      <GetEstimate/>
-      {/*/!*--------Reservation--------*!/*/}
+      {/*<GetEstimate/>*/}
+      {/*/!*--------Quote--------*!/*/}
       {/*<Grid item className={classes.quoteContainer}>*/}
       {/*  <Order/>*/}
       {/*</Grid>*/}
+      {/*<img src={"/assets/best2.jpg"} alt={'pic'} className={classes.pic}/>*/}
     </Grid>
   );
 }

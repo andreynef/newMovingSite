@@ -22,27 +22,23 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
-import { DropzoneArea } from 'material-ui-dropzone';
 import Resizer from 'react-image-file-resizer';
 import {storage} from '../firebase/index';
 
 const useStyles = makeStyles(theme => ({
-  message: {
-    border: `2px solid ${theme.palette.common.darkGrey}`,
-    marginTop: '5em',
-    borderRadius: '5',
-  },
+
   item: {
     // width:'100%',
     marginBottom:'10px'
   },
   quoteContainer: {
-    padding: '40px 0',
-      backgroundImage: `url('/assets/orderbox.jpg')`,
+    paddingBottom: '40px',
+      backgroundImage: `url('/assets/fon_body.png')`,
+      backgroundColor: '#ffffff',
       backgroundPosition: 'center',
-      backgroundSize: 'cover',
+      backgroundSize: 'contain',
       // backgroundAttachment: 'fixed',//фикс картинка при прокрутке
-      backgroundRepeat: 'no-repeat',
+      backgroundRepeat: 'repeat',
       width: '100%',
       [theme.breakpoints.down('md')]: {
     },
@@ -64,7 +60,7 @@ const useStyles = makeStyles(theme => ({
     height: 45,
     width: 245,
     fontSize: '1rem',
-    backgroundColor: theme.palette.common.myGreen,
+    backgroundColor: theme.palette.common.blue,
     '&:hover': {
       backgroundColor: theme.palette.secondary.light
     },
@@ -341,7 +337,7 @@ export default function Quote(props) {
 
   const buttonContents = (
     <>
-      Get Quote
+      request
       <img src={'/assets/send.svg'} alt={'paper plane'} style={{marginLeft: '1em'}}/>
     </>
   );
@@ -361,11 +357,12 @@ export default function Quote(props) {
         <meta property={'og:url'} content={'konstant-movers.com/quote'} key={'og:url'}/>{/*добавляем ссылку на страницу сайта */}
         <link rel={'canonical'} key={'canonical'} href={'konstant-movers.com/quote'}/>{/*дефолтный главный адрес страницы. Зависит от настроек DNS*/}
       </Head>
+      <img src={'/assets/reservation.png'} alt={'reservationPic'} style={{width:'100%', marginBottom:'40px'}}/>
       <Card className={classes.quoteCard}>
         <CardContent>
           <Grid container justify={'center'} style={{padding: '2em 0'}}>
             <Grid item container direction={'column'} alignItems={'center'}>
-              <Typography variant={'h1'} style={{lineHeight: 1, color: '#696969', marginBottom: '20px'}}
+              <Typography variant={'h1'} style={{lineHeight: 1, marginBottom: '20px'}}
                           align={matchesMD ? 'center' : undefined}>
                 Request Quote
               </Typography>
@@ -469,7 +466,7 @@ export default function Quote(props) {
                   <MuiPickersUtilsProvider utils={DateFnsUtils}>
                     <KeyboardDatePicker
                       margin="normal"
-                      color={'secondary'}
+                      // color={'secondary'}
                       id="date-picker-dialog"
                       label="Moving date"
                       format="MM/dd/yyyy"
@@ -622,27 +619,8 @@ export default function Quote(props) {
                     multiline
                     rows={3}
                     fullWidth
+                    color={'primary'}
                   />
-                </Grid>
-                <Grid item className={classes.item} style={{marginTop:20}}>
-                  {/*<DropzoneArea //https://yuvaleros.github.io/material-ui-dropzone/*/}
-                  {/*  acceptedFiles={['image/*']}*/}
-                  {/*  dropzoneText={"drop an image (max 3)"}*/}
-                  {/*  onChange={(files) => onChangeDropzone(files)}*/}
-                  {/*  filesLimit={3}*/}
-                  {/*  maxFileSize={5000000}*/}
-                  {/*/>*/}
-                  <p style={{marginBottom: '20px'}}>Photos (optional):</p>
-                  <input type="file" id="imageInput1" name="image1" onChange={handleUploadFile} accept=".jpg, .jpeg, .png" style={{marginBottom: '20px'}}/>
-                  <input type="file" id="imageInput2" name="image2" onChange={handleUploadFile} accept=".jpg, .jpeg, .png" style={{marginBottom: '20px'}} />
-                  <input type="file" id="imageInput3" name="image3" onChange={handleUploadFile} accept=".jpg, .jpeg, .png" style={{marginBottom: '20px'}}/>
-                  <Grid container justify={'center'}>
-                    {imageUrl1 !=='' && <img src={imageUrl1} alt={'preview pic 1'} style={{width:'30%'}}/>}
-                    {imageUrl2 !=='' && <img src={imageUrl2} alt={'preview pic 2'} style={{width:'30%'}}/>}
-                    {imageUrl3 !=='' && <img src={imageUrl3} alt={'preview pic 3'} style={{width:'30%'}}/>}
-                  </Grid>
-                  <progress value={progress} max={'100'} style={{width:'100%'}}/>
-                  {/*<Button variant={'contained'} onClick={handleUploadFile} disabled >upload pics</Button>*/}
                 </Grid>
               </Grid>
               <Grid item container justify={'space-around'} style={{marginTop: '2em'}}>

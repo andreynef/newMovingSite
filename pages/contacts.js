@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     // borderRadius: '5',
   },
   contactContainer: {
-    paddingBottom: '40px',
+    padding: '40px 0',
     backgroundImage: `url('/assets/fon_body.png')`,
     backgroundColor: '#ffffff',
     backgroundPosition: 'center',
@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
     height: 45,
     width: 245,
     fontSize: '1rem',
-    backgroundColor: theme.palette.common.blue,
+    backgroundColor: theme.palette.common.pink,
     '&:hover': {
       backgroundColor: theme.palette.secondary.light
     },
@@ -166,7 +166,7 @@ console.log (NumberFormat);
         <link rel={'canonical'} key={'canonical'} href={'konstant-movers.com/contacts'}/>
         {/*дефолтный главный адрес страницы. Зависит от настроек DNS*/}
       </Head>
-      <img src={'/assets/contact.png'} alt={'contactPic'} style={{width:'100%', marginBottom:'40px'}}/>
+      {/*<img src={'/assets/contact.png'} alt={'contactPic'} style={{width:'100%', marginBottom:'40px'}}/>*/}
       <Card className={classes.contactCard}>
         <CardContent>
           <Grid container justify={'center'} style={{padding: '2em 0'}}>
@@ -181,7 +181,7 @@ console.log (NumberFormat);
                   {/*  <img src={phoneIcon} alt={'phone'} style={{marginRight: '0.5em', verticalAlign: 'bottom'}}/>*/}
                   {/*</Grid>*/}
                   <Grid item >
-                    <Link variant={'body1'} href={'tel: 415875697194'} style={{color: theme.palette.common.blue, fontSize: '1rem', textDecoration: 'none'}}>
+                    <Link variant={'body1'} href={'tel: 415875697194'} style={{color: theme.palette.common.pink, fontSize: '1rem', textDecoration: 'none'}}>
                       (415)111-1111
                     </Link>
                   </Grid>
@@ -191,7 +191,7 @@ console.log (NumberFormat);
                   {/*  <img src={emailIcon} alt={'envelope'} style={{marginRight: '0.5em', verticalAlign: 'bottom'}}/>*/}
                   {/*</Grid>*/}
                   <Grid item>
-                    <Link variant={'body1'} href={'mailto: email@gmail.com'} style={{color: theme.palette.common.blue, fontSize: '1rem', textDecoration: 'none'}}>
+                    <Link variant={'body1'} href={'mailto: email@gmail.com'} style={{color: theme.palette.common.pink, fontSize: '1rem', textDecoration: 'none'}}>
                       email@gmail.com
                     </Link>
                   </Grid>

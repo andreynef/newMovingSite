@@ -49,7 +49,7 @@ export default function Services(props) {
         <link rel={'canonical'} key={'canonical'} href={'konstant-movers.com/services'}/>
         {/*дефолтный главный адрес страницы. Зависит от настроек DNS*/}
       </Head>
-      <img src={'/assets/service.png'} alt={'servicePic'} style={{width:'100%'}}/>
+      {/*<img src={'/assets/service.png'} alt={'servicePic'} style={{width:'100%'}}/>*/}
       <Grid container direction={'column'} className={classes.serviceContainer}>
 
       <Typography variant={'body1'} style={{fontSize:matchesXS?'0.8rem': undefined, textIndent: '1.5em', textAlign: 'justify', width:matchesSM?'100%':'80%', margin:'0 auto'}}>
@@ -59,7 +59,7 @@ export default function Services(props) {
       <Typography variant={'body1'} style={{fontSize:matchesXS?'0.8rem': undefined, textIndent: '1.5em', textAlign: 'justify', width:matchesSM?'100%':'80%', margin:'1em auto 0 auto'}}>
         Professional movers will ensure that your belongings are protected and safe for their upcoming journey. Disassembly and Reassembly Large furniture, electronics, or anything that has been wall-mounted will need to be taken apart and packed before it can be transported. Save yourself the time and head-scratching by hiring your movers to do it for you. They will come prepared with the correct tools, bag up all of those tiny screws, and make sure it goes back together properly in your new home. How much is your sanity worth to you? Handling Special Items Fragile items, antiques, art, wine collections, you name it -- sometimes there are things in your home that need more than just your average packing job. When you want to be absolutely sure that your precious items make it to your new home intact, enlist the support of your moving company to create a custom wood crate or other custom packaging to get you from here to there.
       </Typography>
-      <Typography variant={'h3'} align={'center'} style={{margin: '1em 0'}}>
+      <Typography variant={'h3'} align={'center'} style={{margin: '1em 0', color: "#F16FA6"}}>
         Services: (либо списком либо карточками как на макете)
       </Typography>
       <Typography variant={'body2'} align={'center'}>

@@ -68,16 +68,16 @@ export default function About(props) {
           About | Konstant Movers
         </title>
       </Head>
-      <img src={'/assets/about.png'} alt={'aboutPic'} style={{width:'100%'}}/>
+      {/*<img src={'/assets/aboutus.jpg'} alt={'aboutPic'} style={{width:'100%'}}/>*/}
       <Grid container className={classes.aboutContainer} justify={'center'}>
         <Grid item container style={{maxWidth:'1240px'}}>
           <Grid item container justify={'center'}>
-            <Typography variant={'h3'} align={'center'} style={{margin: '1em 0'}}>
+            <Typography variant={'h3'} align={'center'} style={{margin: '1em 0', color: '#F16FA6'}}>
               About Us
             </Typography>
           </Grid>
           <Typography variant={'body2'} style={{marginBottom: '2em'}}>
-            All in Moving Systems has been in the moving business for more than 10 years with hundreds of repeat customers. We concentrate on making the process seamless, putting your priorities first. All in Moving Systems has a legacy of creating special client-business relationships that last for years. Perhaps this is why a significant amount of our customers have moved with us in the past.
+            LUCKY moving service has a very extensive experience in the field of moving as well as thousands of lucky customers. For us, every client is our friend,we treat him and his stuff as carefully as possible and try to make his move so that from a person who needs a moving, he becomes a LUCKY client of our company.LUCKY Moving Service hopes to earn its work by creating a special relationship between our LUCKY customers and us that will last for years and generations. We want to make our customers LUCKY people.
           </Typography>
           <Grid container justify={'space-around'} style={{width:'100%', marginBottom:'40px'}}>
             <Card className={classes.card}>

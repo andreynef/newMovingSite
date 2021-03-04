@@ -6,7 +6,7 @@ const darkGrey = '#696969';
 const myGreen = '#008000';
 const lightGrey = '#868686';
 const fon = '#E9F4FE';
-const brown = '#A19284';
+const pink = '#F16FA6';
 const blue = '#4f87dc';
 const lightBrown = '#F0EBE6';
 const lightBlue = '#eff8ff';
@@ -18,15 +18,15 @@ const theme = createMuiTheme({
       darkGrey: darkGrey,
       myGreen: myGreen,
       fon:fon,
-      brown: brown,
+      pink: pink,
       blue: blue,
       lightBlue: lightBlue,
     },
     primary :{// хз но генерируются black and light versions тобишь есть primary.dark and primary.light
-      main: blue,
+      main: pink,
     },
     secondary: {// хз но генерируются black and light versions тобишь есть secondary.dark and secondary.light
-      main: blue,
+      main: pink,
     }
   },
   typography: {
@@ -47,24 +47,24 @@ const theme = createMuiTheme({
       fontFamily: 'Raleway',
       fontWeight: 700,
       fontSize: '2.5rem',
-      color: blue,
+      color: pink,
       lineHeight: 1.5
     },
     h3: {
       fontFamily: 'Pacifico',
       fontSize: '2.5rem',
-      color: blue,
+      color: pink,
     },
     h4: {
       fontFamily: 'Raleway',
       fontWeight: 700,
       fontSize: '1.75rem',
-      color: blue,
+      color: pink,
     },
     h6: {
       fontFamily: 'Raleway',
       fontWeight: 500,
-      color: blue,
+      color: pink,
       lineHeight: 1
     },
     subtitle1: {
@@ -72,7 +72,7 @@ const theme = createMuiTheme({
       textTransform: 'none',
       fontSize: '1.4rem',
       fontWeight: 500,
-      color: blue,
+      color: pink,
     },
     subtitle2: {
       fontFamily: 'Pacifico',
@@ -93,8 +93,8 @@ const theme = createMuiTheme({
       // color: blue,
     },
     learnButton: {
-      borderColor: blue,
-      color: blue,
+      borderColor: pink,
+      color: pink,
       borderWidth: 2,
       textTransform: 'none',
       borderRadius: 50,
@@ -105,31 +105,34 @@ const theme = createMuiTheme({
   overrides: {
     MuiInputLabel: {//спец css для инпутов
       root: {//изменяем дефолт
-        color: blue,
+        color: pink,
         fontSize: '1rem'
       }
     },
     MuiIconButton: {//спец css для инпутов
       root: {//изменяем дефолт
-        fill: blue,
+        fill: pink,
       }
     },
     MuiSvgIcon: {//спец css для инпутов
       root: {//изменяем дефолт
-        fill: blue,
+        fill: pink,
       }
     },
     MuiInput: {//спец css для инпутов
       root: {//цвет текста
-        color: blue,
+        color: pink,
         fontWeight: 300,
       },
       underline: {
         '&:before': {
-          borderBottom: `2px solid ${blue}`//поменять цвет палки
+          borderBottom: `2px solid ${pink}`//поменять цвет палки
+        },
+        '&:after': {
+          borderBottom: `2px solid ${pink}`//поменять цвет палки
         },
         '&:hover:not($disabled):not($focused):not($error):before': {//поменять цвет палки при ховере но оставить для других состояний
-          borderBottom: `2px solid ${blue}`
+          borderBottom: `2px solid ${pink}`
         }
       }
     },

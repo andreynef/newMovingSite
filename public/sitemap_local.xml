@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://konstant-movers.com/about</loc>
+    <lastmod>2021-02-18</lastmod>
+  </url>,<url>
     <loc>https://konstant-movers.com/contacts</loc>
-    <lastmod>2020-10-30</lastmod>
+    <lastmod>2021-02-17</lastmod>
   </url>,<url>
     <loc>https://konstant-movers.com</loc>
-    <lastmod>2020-10-30</lastmod>
-  </url>,<url>
-    <loc>https://konstant-movers.com/photos</loc>
-    <lastmod>2020-10-30</lastmod>
+    <lastmod>2021-02-17</lastmod>
   </url>,<url>
     <loc>https://konstant-movers.com/quote</loc>
-    <lastmod>2020-10-30</lastmod>
+    <lastmod>2021-02-08</lastmod>
+  </url>,<url>
+    <loc>https://konstant-movers.com/reservation</loc>
+    <lastmod>2021-02-17</lastmod>
   </url>,<url>
     <loc>https://konstant-movers.com/services</loc>
-    <lastmod>2020-10-30</lastmod>
+    <lastmod>2021-02-17</lastmod>
+  </url>,<url>
+    <loc>https://konstant-movers.com/upload</loc>
+    <lastmod>2020-12-22</lastmod>
   </url>
 </urlset>

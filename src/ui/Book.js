@@ -18,7 +18,7 @@ import Link from "./Link";
 const useStyles = makeStyles(theme => ({
   mainContainer: {
     padding: '4em 0',
-    backgroundImage: 'url(/assets/bl1.webp)',
+    backgroundImage: 'url(/assets/titleCut.jpg)',
     backgroundSize: 'cover',
     [theme.breakpoints.down('md')]: {
     },
@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
   bookContainer: {
     // border:'1px solid red',
     maxWidth:'1240px',
-    padding: '0',
+    padding: '10em 0',
     [theme.breakpoints.down('md')]: {
       padding: '0 20px',
     },
@@ -63,11 +63,12 @@ const useStyles = makeStyles(theme => ({
   },
   firstButton: {
     ...theme.typography.estimate,
+    marginTop: '5em',
     borderRadius: 50,
     height: 35,
     width: 210,
     fontSize: '1.2rem',
-    backgroundColor: theme.palette.common.blue,
+    backgroundColor: theme.palette.common.pink,
     '&:hover': {
       backgroundColor: theme.palette.secondary.light
     },
@@ -78,6 +79,8 @@ export default function Contact(props) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.down('md'));//вызываем библиотеку для адаптива
+  const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));//вызываем библиотеку для адаптива
+  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));//вызываем библиотеку для адаптива
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -144,103 +147,27 @@ export default function Contact(props) {
 
   return (
     <Grid container direction={matchesMD?'column-reverse':null} justify={'center'} className={classes.mainContainer}>
-      <Grid item container justify={'flex-end'} className={classes.bookContainer} >
-        <Card className={classes.cardContainer}>
-          <CardContent>
-            <Grid container justify={'center'} style={{padding: '2em 0'}}>
-              <Grid item container direction={'column'} alignItems={'center'}>
-                  <Button
-                  variant={'contained'}
-                  className={classes.firstButton}
-                  component={Link}
-                  href={'/quote'}
-                  style={{marginLeft: '20px'}}
-                >
-                    Get free quote
-                </Button>
-                <Typography variant={'body1'} style={{lineHeight: 1, padding: '20px 40px 20px 40px'}} align={'center'}>
-                  or
-                </Typography>
-                <Typography variant={'body1'} style={{lineHeight: 1, padding: '0 40px 20px 40px'}} align={'center'}>
-                  send us a message
-                </Typography>
-                <Grid item container direction={'column'} style={{width: '20em'}}>
-                  <Grid item style={{marginBottom: '0.5em'}}>
-                    <TextField
-                      label={'Full Name*'}
-                      id={'name'}
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      fullWidth
-                    />
-                  </Grid>
-                  <Grid item style={{marginBottom: '0.5em'}}>
-                    <TextField
-                      label={'Email*'}
-                      helperText={emailHelper}
-                      id={'email'}
-                      value={email}
-                      onChange={onChange}
-                      fullWidth
-                    />
-                  </Grid>
-                  <Grid item style={{marginBottom: '0.5em'}}>
-                    <TextField
-                      label={'Phone number*'}
-                      helperText={phoneHelper}
-                      id={'phone'}
-                      value={phone}
-                      onChange={onChange}
-                      fullWidth
-                    />
-                  </Grid>
-                </Grid>
-                <Grid item style={{width: '20em'}}>
-                  <TextField
-                    id={'message'}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    multiline
-                    rows={5}
-                    className={classes.message}
-                    variant="outlined"
-                    // inputProps={{disableUnderline:true}}//убрать палку через спец инпутовский метод
-                    fullWidth
-                    placeholder={'Message'}
+      <Grid item container className={classes.bookContainer} >
+        <Grid item>
+          <Typography
+            variant={'h1'}
+            style={{color:'white', lineHeight:1.3, fontSize:matchesXS?'1.8rem':matchesSM? '2.1rem':null}}
+          >
+            LUCKY MOVING SERVICE
+          </Typography>
+          <Typography variant={'h6'} style={{color:'white', marginTop:'20px'}}>ANYTIME ANYWHERE</Typography>
+        </Grid>
+        <Grid item container style={{marginTop: '2em'}}>
+          <Button
+            variant={'contained'}
+            className={classes.firstButton}
+            component={Link}
+            href={'/quote'}
+          >
+            Get free quote
+          </Button>
+        </Grid>
 
-                  />
-                </Grid>
-                <Grid item container justify={'center'} style={{marginTop: '2em'}}>
-                  <Button
-                    variant={'contained'}
-                    className={classes.sendButton}
-                    color={"secondary"}
-                    disabled={//кнопка не рабочая если true эти условия
-                      phone.length === 0 ||
-                      email.length === 0 ||
-                      name.length === 0 ||
-                      message.length === 0 ||
-                      phoneHelper.length !== 0 ||
-                      emailHelper.length !== 0
-                    }
-                    onClick={onConfirm}//для диалога
-                  >
-                    {loading ? <CircularProgress size={30}/> : <span>Send</span>}{/*показывать кнопку или индикатор загрузки во время работы axios*/}
-                  </Button>
-                </Grid>
-                <Snackbar//всплывающее окно подтверждения
-                  open={alert.open}
-                  message={alert.message}
-                  ContentProps={{style: {backgroundColor: alert.backgroundColor}}}
-                  anchorOrigin={{vertical: 'top', horizontal: 'center'}}
-                  onClose={() => setAlert({...alert, open: false})}
-                  autoHideDuration={4000}
-                />
-              </Grid>
-
-            </Grid>
-          </CardContent>
-        </Card>
       </Grid>
 
     </Grid>

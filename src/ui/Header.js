@@ -19,6 +19,7 @@ import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Snackbar from "@material-ui/core/Snackbar";
+import Button from "@material-ui/core/Button";
 function ElevationScroll(props) {
   const {children} = props;
 
@@ -37,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     ...theme.mixins.toolbar,//скопировано из default theme из библиотеки
     marginBottom: '3em',
     [theme.breakpoints.down('md')]: {
-      marginBottom: '2em'
+      marginBottom: '2em',
     },
     [theme.breakpoints.down('xs')]: {
       marginBottom: '1em'
@@ -54,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.tab,//остальное засунул в глобал и здесь экстенжу
     minWidth: 10,
     margin: '0 0 0 25px',
-    color: theme.palette.common.blue,
+    color: theme.palette.common.pink,
 
   },
   menuItem: {
@@ -76,15 +77,33 @@ const useStyles = makeStyles(theme => ({
     width: '50px',
   },
   drawer: {
-    backgroundColor: theme.palette.common.lightBlue,
+    backgroundColor: theme.palette.common.pink,
   },
   drawerItem: {
     ...theme.typography.tab,//делаем стили дровера схожими на табные
-    color: theme.palette.common.blue,
+    color: 'white',
+    opacity: 0.7,
+  },
+  quote: {
+    ...theme.typography.estimate,
+    borderRadius: 50,
+    height: 35,
+    width: 210,
+    fontSize: '1.2rem',
+    backgroundColor: theme.palette.common.pink,
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.light,
+      textDecoration: 'none',
+    },
+  },
+
+  drawerItemQuote: {
+    ...theme.typography.tab,//делаем стили дровера схожими на табные
+    color: 'white',
     opacity: 0.7,
   },
   drawerItemEstimate: {
-    backgroundColor: theme.palette.common.blue,
+    backgroundColor: theme.palette.common.pink,
   },
   drawerItemSelected: {
     '& .MuiListItemText-root': {//все текстовые элементы внутри drawerItemSelected
@@ -94,6 +113,14 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     zIndex: theme.zIndex.modal,//шапка хеадера будет находиться чуть выше всплывающего меню, ибо меню нельзя сделать частью экрана а только на всю высоту, поэтому решаем только перекрытием и отступом.
     backgroundColor: theme.palette.common.lightBlue,
+    padding: '5px 0',
+    [theme.breakpoints.down('md')]: {
+      padding: '5px 20px',
+    },
+    // [theme.breakpoints.down('xs')]: {
+    //   padding: '5px 0',
+    // },
+
   },
 }));
 
@@ -120,11 +147,10 @@ export default function Header(props) {
   }
 
   const routes = [
-    {name: 'Home', link: '/', activeIndex: 0},
-    {name: 'Services', link: '/services', activeIndex: 1},
-    {name: 'About', link: '/about', activeIndex: 2},
-    {name: 'Reservation', link: '/reservation', activeIndex: 3},
-    {name: 'Contacts', link: '/contacts', activeIndex: 4},
+    {name: 'Get Free Quote', link: '/quote', activeIndex: 0},
+    {name: 'About', link: '/about', activeIndex: 1},
+    {name: 'Services', link: '/services', activeIndex: 2},
+    {name: 'Contacts', link: '/contacts', activeIndex: 3},
   ]
 
 //исправление несовпадаемости открытой страницы и закладки при перезагрузке.
@@ -160,7 +186,7 @@ export default function Header(props) {
             component={Link}
             href={route.link}
             label={route.name}
-            className={classes.tab}//route.link==='/services'? classes.grey: route.link==='/photos'? classes.grey :
+            className={route.link==='/quote' ? classes.quote : classes.tab}//route.link==='/services'? classes.grey: route.link==='/photos'? classes.grey :
             aria-owns={route.ariaOwns}//если нет то просто будет пусто. В итоге только для сервиса.
             aria-haspopup={route.ariaHasPopup}//если нет то просто будет пусто. В итоге только для сервиса.
             onMouseOver={route.mouseOver}//если нет то просто будет пусто. В итоге только для сервиса.
@@ -218,7 +244,7 @@ export default function Header(props) {
               classes={route.link==='/order' ? {root: classes.drawerItemEstimate, selected: classes.drawerItemSelected}:{selected: classes.drawerItemSelected}}//есть в Mui атрибут selected кот take this logic behind the scene.
             >
               <ListItemText
-                className={classes.drawerItem}
+                className={route.link==='/quote' ? classes.drawerItemQuote : classes.drawerItem}
                 disableTypography
               >
                 {route.name}
@@ -247,10 +273,14 @@ export default function Header(props) {
             <Grid container justify={'center'}>
               <Grid item container justify={'space-between'} alignItems={'center'} style={{maxWidth: '1240px'}}>
                 <Hidden smDown>{/*при уменьшении экрана рендерить разные меню*/}
-                  <img src={"/assets/logogif.gif"} alt={'logo'} style={{width: '100px'}}/>
+                  <Button component={Link} href={'/'} onClick={() => {
+                    props.setValue(0)
+                  }} disableRipple>{/*обернуть лого в кнопку с онкликом установки value на домашнюю страницу*/}
+                    <img src={"/assets/logogif.gif"} alt={'logo'} style={{width: '100px'}}/>
+                  </Button>
                   {tabs}
                   <Typography variant={'caption'} style={{fontSize: matchesXS? '0.7rem':'1.1rem',margin: '0 0 3px 4em'}}>
-                    <a href={'tel: +14154497888'} style={{textDecoration: 'none', color:theme.palette.common.blue, fontWeight: 700}}>(415) 449-7888</a>
+                    <a href={'tel: +14154497888'} style={{textDecoration: 'none', color:theme.palette.common.pink, fontWeight: 700}}>(415) 449-7888</a>
                   </Typography>
                 </Hidden>
                 <Hidden mdUp>
